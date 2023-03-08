@@ -39,6 +39,8 @@ stages:
           - script: |
               npm install
               npm i lighthouse@8.6.0 -g
+              import chromedriver_autoinstaller as chromedriver
+              chromedriver.install()
             displayName: "install light_houes"
 
           - task: DotNetCoreCLI@2
