@@ -39,9 +39,12 @@ stages:
           - script: |
               npm install
               npm i lighthouse@8.6.0 -g
-              import chromedriver_autoinstaller as chromedriver
-              chromedriver.install()
             displayName: "install light_houes"
+          
+          - script: |
+            displayName: Uninstall and Re-install Chrome
+              brew uninstall --cask chromedriver
+              brew install --cask chromedriver
 
           - task: DotNetCoreCLI@2
             displayName: 'Restore project dependencies'
